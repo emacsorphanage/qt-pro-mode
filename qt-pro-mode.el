@@ -118,7 +118,7 @@
 
 (defun qt-pro-mode-turn-on-fic-mode ()
   "Turn function `fic-mode' on."
-  (when (fboundp fic-mode)
+  (when (fboundp 'fic-mode)
     (fic-mode 1)))
 
 (defun qt-pro-mode-associate-files ()
