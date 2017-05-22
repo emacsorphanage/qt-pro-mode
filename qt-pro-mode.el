@@ -3,6 +3,7 @@
 ;;; Copyright (C) 2007  Free Software Foundation, Inc.
 ;;
 ;;; Author: Todd Neal <tolchz@gmail.com>
+;; Version: 1.0.0
 ;; Keywords: extensions
 ;;
 ;; This file is free software; you can redistribute it and/or modify
@@ -115,17 +116,16 @@
   (set (make-local-variable 'comment-start-skip) "#+\\s-*")
   (set (make-local-variable 'font-lock-defaults) '(qt-pro-font-lock-keywords)))
 
-(defun qt-pro-turn-on-fic-mode ()
+(defun qt-pro-mode-turn-on-fic-mode ()
   "Turn function `fic-mode' on."
   (fic-mode 1))
 
-(defun qt-pro-associate-files ()
-  "Associate auxiliary file-extensions with their proper
-major-modes."
+(defun qt-pro-mode-associate-files ()
+  "Associate auxiliary file-extensions with their proper major-modes."
   (add-to-list 'auto-mode-alist '("\\.qrc\\'" . xml-mode))
   (add-hook 'qt-pro-mode-hook 'qt-pro-turn-on-fic-mode))
 
-  (eval-after-load 'qt-pro-mode 'qt-pro-associate-files)
+(eval-after-load 'qt-pro-mode 'qt-pro-mode-associate-files)
 
 
 (provide 'qt-pro-mode)
