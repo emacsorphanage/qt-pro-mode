@@ -109,7 +109,7 @@
   "Keyword highlighting specification for `qt-pro-mode'.")
 
 ;;;###autoload
-(define-derived-mode qt-pro-mode fundamental-mode "Qt-pro"
+(define-derived-mode qt-pro-mode fundamental-mode "Qt"
   "A major mode for editing Qt build-system files."
   :syntax-table qt-pro-mode-syntax-table
   (set (make-local-variable 'comment-start) "# ")
@@ -118,14 +118,15 @@
 
 (defun qt-pro-mode-turn-on-fic-mode ()
   "Turn function `fic-mode' on."
-  (fic-mode 1))
+  (when (fboundp fic-mode)
+    (fic-mode 1)))
 
 (defun qt-pro-mode-associate-files ()
   "Associate auxiliary file-extensions with their proper major-modes."
   (add-to-list 'auto-mode-alist '("\\.qrc\\'" . xml-mode))
-  (add-hook 'qt-pro-mode-hook 'qt-pro-turn-on-fic-mode))
+  (add-hook 'qt-pro-mode-hook #'qt-pro-mode-turn-on-fic-mode))
 
-(eval-after-load 'qt-pro-mode 'qt-pro-mode-associate-files)
+(eval-after-load 'qt-pro-mode #'qt-pro-mode-associate-files)
 
 
 (provide 'qt-pro-mode)
