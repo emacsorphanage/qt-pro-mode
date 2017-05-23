@@ -18,7 +18,7 @@ Or manually
 (add-to-list 'auto-mode-alist '("\\.pr[io]$" . qt-pro-mode))
 ```
 
-## Related
+## Acknowledgements
 
 Thanks to Todd Neal for the original version of this file, which I
 found
