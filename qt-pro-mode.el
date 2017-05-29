@@ -36,15 +36,11 @@
 ;;
 ;; or:
 ;;
-;; (use-package qt-pro-mode :ensure t
+;; (use-package qt-pro-mode
+;;   :ensure t
 ;;   :mode ("\\.pro\\'" "\\.pri\\'"))
 
 ;;; Code:
-(defvar qt-pro-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map [foo] 'qt-pro-do-foo)
-    map)
-  "Keymap for `qt-pro-mode'.")
 
 (defvar qt-pro-mode-syntax-table
   (let ((st (make-syntax-table)))
@@ -109,24 +105,14 @@
   "Keyword highlighting specification for `qt-pro-mode'.")
 
 ;;;###autoload
-(define-derived-mode qt-pro-mode fundamental-mode "Qt"
+(define-derived-mode qt-pro-mode prog-mode "Qt"
   "A major mode for editing Qt build-system files."
-  :syntax-table qt-pro-mode-syntax-table
   (set (make-local-variable 'comment-start) "# ")
   (set (make-local-variable 'comment-start-skip) "#+\\s-*")
   (set (make-local-variable 'font-lock-defaults) '(qt-pro-font-lock-keywords)))
 
-(defun qt-pro-mode-turn-on-fic-mode ()
-  "Turn function `fic-mode' on."
-  (when (fboundp 'fic-mode)
-    (fic-mode 1)))
 
-(defun qt-pro-mode-associate-files ()
-  "Associate auxiliary file-extensions with their proper major-modes."
-  (add-to-list 'auto-mode-alist '("\\.qrc\\'" . xml-mode))
-  (add-hook 'qt-pro-mode-hook #'qt-pro-mode-turn-on-fic-mode))
-
-(eval-after-load 'qt-pro-mode #'qt-pro-mode-associate-files)
+(add-to-list 'auto-mode-alist '("\\.qrc\\'" . xml-mode))
 
 
 (provide 'qt-pro-mode)
