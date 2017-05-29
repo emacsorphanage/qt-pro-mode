@@ -7,8 +7,9 @@
 From [MELPA](https://melpa.org/)
 
 ```lisp
-(use-package qt-pro-mode :ensure t
-:mode ("\\.pro\\'" "\\.pri\\'")))
+(use-package qt-pro-mode
+  :ensure t
+  :mode ("\\.pro\\'" "\\.pri\\'")))
 ```
 
 Or manually
