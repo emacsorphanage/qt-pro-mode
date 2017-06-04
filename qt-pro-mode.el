@@ -5,6 +5,7 @@
 ;;; Author: Todd Neal <tolchz@gmail.com>
 ;; Version: 1.0.0
 ;; Keywords: extensions
+;; Package-Requires: ((emacs "24"))
 ;;
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
