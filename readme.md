@@ -1,4 +1,4 @@
-# qt-pro-mode [![Build Status](https://travis-ci.org/EricCrosson/qt-pro-mode.svg?branch=master)](https://travis-ci.org/EricCrosson/qt-pro-mode)
+# qt-pro-mode [![Build Status](https://travis-ci.org/EricCrosson/qt-pro-mode.svg?branch=master)](https://travis-ci.org/EricCrosson/qt-pro-mode) [![MELPA](https://melpa.org/packages/qt-pro-mode-badge.svg)](https://melpa.org/#/qt-pro-mode)
 
 > GNU Emacs major-mode for Qt build-system files
 
