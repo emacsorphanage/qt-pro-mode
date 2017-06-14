@@ -28,3 +28,7 @@ found
 ## License
 
 GPL 2 (or higher) © [Free Software Foundation, Inc](http://www.fsf.org/about).
+
+## Bugs
+
+Please file bugs at <https://github.com/ericcrosson/qt-pro-mode/issues>.
