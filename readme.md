@@ -9,7 +9,7 @@ From [MELPA](https://melpa.org/)
 ```lisp
 (use-package qt-pro-mode
   :ensure t
-  :mode ("\\.pro\\'" "\\.pri\\'")))
+  :mode ("\\.pro\\'" "\\.pri\\'"))
 ```
 
 Or manually
