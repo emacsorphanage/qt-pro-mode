@@ -19,7 +19,7 @@ Or manually, after downloading into your `load-path`
 (add-to-list 'auto-mode-alist '("\\.pr[io]$" . qt-pro-mode))
 ```
 
-## Acknowledgements
+## Acknowledgments
 
 Thanks to Todd Neal for the original version of this file, which I
 found
